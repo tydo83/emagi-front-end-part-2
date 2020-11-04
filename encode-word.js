@@ -6,13 +6,11 @@ const encodeWord = function(word) {
     let result = '';
     for (const char of word) {
         for (const emoji of emojis) {
-            if (emoji.letter === char.toLowerCase()) {
+            if (emoji.letter === char) {
                 result += emoji.symbol;
             }
         }
     }
-
-    return result;
 }
 
 // mapping version
@@ -24,8 +22,6 @@ const encodeWordAlt = function(word) {
                 return emoji.symbol;
             }
         }
-
-        return letter;
     })
 
     return encodedLetters.join('');
@@ -39,8 +35,6 @@ const encodeWordAlt2 = function(word) {
                 return emoji.symbol;
             }
         }
-
-        return letter;
     }).join('');
 }
 
